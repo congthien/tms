@@ -48,7 +48,8 @@ function tsm_setup() {
 	register_nav_menus( array(
 		'primary' => esc_html__( 'Primary', 'tsm' ),
 		'footer'  => esc_html__( 'Footer', 'tsm' ),
-		'top'  		=> esc_html__( 'Top Menu', 'tsm' ),
+		'top'  	  => esc_html__( 'Top Menu', 'tsm' ),
+		'mobile'  => esc_html__( 'Mobile Menu', 'tsm' ),
 	) );
 
 	/*
