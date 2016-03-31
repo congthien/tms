@@ -207,7 +207,7 @@ get_header(); ?>
                                         ?>
                                         <div class="col-md-6 col-sm-6 col-xs-6 thumb">
                                             <div class="thumbnail" href="#">
-                                              <a href="<?php echo wp_get_attachment_url( get_post_thumbnail_id() ) ; ?>" class="magnific-image img-thumbnail">
+                                              <a href="<?php the_permalink() ; ?>" class="img-thumbnail">
                                                 <?php the_post_thumbnail( 'tms_product_thumb' ); ?>
                                               </a>
                                             </div>
