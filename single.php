@@ -15,11 +15,8 @@ get_header(); ?>
 				<div class="container">
 					<!-- breadcrumn -->
 					<div class="row">
-						<ol class="breadcrumb">
-							<li><a href="#">Home</a></li>
-							<li><a href="blog-classic.html">News</a></li>
-							<li class="active">2015 President's Award Presented to David I. McLean</li>
-						</ol>
+						<?php if ( function_exists('yoast_breadcrumb') )
+								{yoast_breadcrumb('<p id="breadcrumbs">','</p>');} ?>
 					</div>
 
 					<div class="row">
