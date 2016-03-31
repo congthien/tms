@@ -205,7 +205,19 @@ a.featured-link {
 }
 
 /* posts */
-
+#breadcrumbs {
+	font-size: 14px;
+	padding-left: 3.6em;
+	color: #999;
+}
+#breadcrumbs a {
+	color: #999;
+}
+#breadcrumbs a::before{
+	content: "/";
+	color: #999;
+	padding: 0 10px 0 8px;
+}
 ol.breadcrumb {
 	font-size: 14px;
 	padding-left: 3.6em;
