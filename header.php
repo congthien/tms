@@ -62,7 +62,13 @@
 													echo '<a class="default-logo" href="' . esc_url( site_url( '/') ) . '" rel="home">';
 														echo '<img src="' . $site_image_logo . '" alt="' . get_bloginfo('title') . '">';
 													echo '</a>';
+													echo '<a class="default-retina-logo" href="' . esc_url( site_url( '/') ) . '" rel="home">';
+														echo '<img src="' . $site_image_logo . '" alt="' . get_bloginfo('title') . '">';
+													echo '</a>';
 													echo '<a class="sticky-logo" href="' . esc_url( site_url( '/') ) . '" rel="home">';
+														echo '<img src="' . $site_image_logo . '" alt="' . get_bloginfo('title') . '">';
+													echo '</a>';
+													echo '<a class="sticky-retina-logo" href="' . esc_url( site_url( '/') ) . '" rel="home">';
 														echo '<img src="' . $site_image_logo . '" alt="' . get_bloginfo('title') . '">';
 													echo '</a>';
 											} elseif (isset($site_text_logo) && $site_text_logo != "") {
@@ -77,7 +83,7 @@
 									}
 
 									?>
-                  
+
 								</div>
 
              		<a href="#" class="visible-sm visible-xs" id="menu-toggle"><i class="fa fa-bars"></i></a>
