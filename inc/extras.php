@@ -4,7 +4,7 @@
  *
  * Eventually, some of the functionality here could be replaced by core features.
  *
- * @package tsm
+ * @package tms
  */
 
 /**
@@ -13,7 +13,7 @@
  * @param array $classes Classes for the body element.
  * @return array
  */
-function tsm_body_classes( $classes ) {
+function tms_body_classes( $classes ) {
 	// Adds a class of group-blog to blogs with more than 1 published author.
 	if ( is_multi_author() ) {
 		$classes[] = 'group-blog';
@@ -27,9 +27,9 @@ function tsm_body_classes( $classes ) {
 	$classes[] = 'header-style2 boxed';
 	return $classes;
 }
-add_filter( 'body_class', 'tsm_body_classes' );
+add_filter( 'body_class', 'tms_body_classes' );
 
-function tsm_custom_search_form( $form ) {
+function tms_custom_search_form( $form ) {
 
 	$form = '<form role="search" method="get" id="searchform" class="searchform" action="' . home_url( '/' ) . '" >
     <div class="input-group">
@@ -42,4 +42,4 @@ function tsm_custom_search_form( $form ) {
 
 	return $form;
 }
-add_filter( 'get_search_form', 'tsm_custom_search_form' );
+add_filter( 'get_search_form', 'tms_custom_search_form' );

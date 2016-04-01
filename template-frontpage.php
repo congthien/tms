@@ -2,7 +2,7 @@
 /**
  * Template Name: Front Page
  *
- * @package tsm
+ * @package tms
  */
 
 get_header(); ?>
@@ -89,7 +89,7 @@ get_header(); ?>
                                 <a href="<?php the_permalink(); ?>">
                                       <?php
                                         if ( has_post_thumbnail() ) {
-                                          the_post_thumbnail( 'tsm_blog_medium', array( 'class' => 'hidden-xs hidden-sm' ) );
+                                          the_post_thumbnail( 'tms_blog_medium', array( 'class' => 'hidden-xs hidden-sm' ) );
                                         } else {
                                           echo '<img src="'. get_template_directory_uri() .'/assets/images/default-thumbnail.png" alt="" class="hidden-xs hidden-sm" />';
                                         }
@@ -272,7 +272,7 @@ get_header(); ?>
 
                                                     <a href="<?php the_permalink(); ?>" class="media-box">
                                                       <?php if ( has_post_thumbnail() ) {
-                                                        the_post_thumbnail( 'tsm_blog_medium' );
+                                                        the_post_thumbnail( 'tms_blog_medium' );
                                                       } ?>
                                                     </a>
                                                     <div class="grid-item-content">
@@ -280,7 +280,7 @@ get_header(); ?>
                                                           <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                                                         </h3>
                                                         <span class="meta-data">
-                                                          <?php printf( __( 'Posted on %s', 'tsm' ), get_the_date( 'dS M, Y' ) ); ?>
+                                                          <?php printf( __( 'Posted on %s', 'tms' ), get_the_date( 'dS M, Y' ) ); ?>
                                                         </span>
                                                     </div>
                                                 </div>

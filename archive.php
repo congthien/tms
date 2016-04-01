@@ -4,7 +4,7 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package tsm
+ * @package tms
  */
 
 get_header(); ?>

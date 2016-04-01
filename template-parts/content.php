@@ -4,7 +4,7 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package tsm
+ * @package tms
  */
 
 ?>
@@ -16,7 +16,7 @@
 			<div class="col-md-4 col-sm-4">
 				<a href="<?php the_permalink() ?>" class="media-box grid-featured-img">
 				<?php if ( has_post_thumbnail() ) {
-					the_post_thumbnail('tsm_blog_medium');
+					the_post_thumbnail('tms_blog_medium');
 				} ?>
 				</a>
 			</div>
@@ -30,7 +30,7 @@
 
 					if ( 'post' === get_post_type() ) : ?>
 					<div class="entry-meta">
-						<?php tsm_posted_on(); ?>
+						<?php tms_posted_on(); ?>
 					</div><!-- .entry-meta -->
 					<?php
 					endif; ?>
@@ -39,7 +39,7 @@
 				<div class="grid-item-excerpt">
 					<?php the_excerpt(); ?>
 				</div>
-				<a href="<?php the_permalink() ?>" class="basic-link"><?php _e('Read More', 'tsm'); ?></a>
+				<a href="<?php the_permalink() ?>" class="basic-link"><?php _e('Read More', 'tms'); ?></a>
 			</div>
 
 		</div>

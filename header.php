@@ -6,7 +6,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package tsm
+ * @package tms
  */
 
 ?><!DOCTYPE html>
@@ -24,7 +24,7 @@
 
 <body <?php body_class(); ?>>
 <div id="page" class="body site">
-	<a class="skip-link screen-reader-text" href="#main"><?php esc_html_e( 'Skip to content', 'tsm' ); ?></a>
+	<a class="skip-link screen-reader-text" href="#main"><?php esc_html_e( 'Skip to content', 'tms' ); ?></a>
 
 	<header id="masthead" class="topbar .hidden-sm" role="banner">
 			<div class="container vrpadl0">

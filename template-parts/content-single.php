@@ -4,7 +4,7 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package tsm
+ * @package tms
  */
 
 ?>
@@ -25,7 +25,7 @@
 			the_content();
 
 			wp_link_pages( array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'tsm' ),
+				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'tms' ),
 				'after'  => '</div>',
 			) );
 		?>
@@ -33,7 +33,7 @@
 
 	<footer class="entry-footer">
     <div class="tag-cloud">
-      <?php tsm_entry_footer(); ?>
+      <?php tms_entry_footer(); ?>
     </div>
 
     <!-- About Author -->

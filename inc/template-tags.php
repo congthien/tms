@@ -4,14 +4,14 @@
  *
  * Eventually, some of the functionality here could be replaced by core features.
  *
- * @package tsm
+ * @package tms
  */
 
-if ( ! function_exists( 'tsm_posted_on' ) ) :
+if ( ! function_exists( 'tms_posted_on' ) ) :
 /**
  * Prints HTML with meta information for the current post-date/time and author.
  */
-function tsm_posted_on() {
+function tms_posted_on() {
 	//$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
 	$time_string = '';
 	if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
@@ -24,12 +24,12 @@ function tsm_posted_on() {
 	);
 
 	$posted_on = sprintf(
-		esc_html_x( 'Posted on %s', 'post date', 'tsm' ),
+		esc_html_x( 'Posted on %s', 'post date', 'tms' ),
 		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
 	);
 
 	$byline = sprintf(
-		esc_html_x( 'by %s', 'post author', 'tsm' ),
+		esc_html_x( 'by %s', 'post author', 'tms' ),
 		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 	);
 
@@ -38,11 +38,11 @@ function tsm_posted_on() {
 }
 endif;
 
-if ( ! function_exists( 'tsm_entry_footer' ) ) :
+if ( ! function_exists( 'tms_entry_footer' ) ) :
 /**
  * Prints HTML with meta information for the categories, tags and comments.
  */
-function tsm_entry_footer() {
+function tms_entry_footer() {
 	// Hide category and tag text for pages.
 	if ('post' === get_post_type()) {
 
@@ -55,7 +55,7 @@ function tsm_entry_footer() {
 
 	if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
 		echo '<span class="comments-link">';
-		comments_popup_link( esc_html__( 'Leave a comment', 'tsm' ), esc_html__( '1 Comment', 'tsm' ), esc_html__( '% Comments', 'tsm' ) );
+		comments_popup_link( esc_html__( 'Leave a comment', 'tms' ), esc_html__( '1 Comment', 'tms' ), esc_html__( '% Comments', 'tms' ) );
 		echo '</span>';
 	}
 
@@ -67,8 +67,8 @@ endif;
  *
  * @return bool
  */
-function tsm_categorized_blog() {
-	if ( false === ( $all_the_cool_cats = get_transient( 'tsm_categories' ) ) ) {
+function tms_categorized_blog() {
+	if ( false === ( $all_the_cool_cats = get_transient( 'tms_categories' ) ) ) {
 		// Create an array of all the categories that are attached to posts.
 		$all_the_cool_cats = get_categories( array(
 			'fields'     => 'ids',
@@ -80,30 +80,30 @@ function tsm_categorized_blog() {
 		// Count the number of categories that are attached to the posts.
 		$all_the_cool_cats = count( $all_the_cool_cats );
 
-		set_transient( 'tsm_categories', $all_the_cool_cats );
+		set_transient( 'tms_categories', $all_the_cool_cats );
 	}
 
 	if ( $all_the_cool_cats > 1 ) {
-		// This blog has more than 1 category so tsm_categorized_blog should return true.
+		// This blog has more than 1 category so tms_categorized_blog should return true.
 		return true;
 	} else {
-		// This blog has only 1 category so tsm_categorized_blog should return false.
+		// This blog has only 1 category so tms_categorized_blog should return false.
 		return false;
 	}
 }
 
 /**
- * Flush out the transients used in tsm_categorized_blog.
+ * Flush out the transients used in tms_categorized_blog.
  */
-function tsm_category_transient_flusher() {
+function tms_category_transient_flusher() {
 	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
 		return;
 	}
 	// Like, beat it. Dig?
-	delete_transient( 'tsm_categories' );
+	delete_transient( 'tms_categories' );
 }
-add_action( 'edit_category', 'tsm_category_transient_flusher' );
-add_action( 'save_post',     'tsm_category_transient_flusher' );
+add_action( 'edit_category', 'tms_category_transient_flusher' );
+add_action( 'save_post',     'tms_category_transient_flusher' );
 
 
 function tms_comment( $comment, $args, $depth ) {
@@ -164,22 +164,22 @@ function tms_comment( $comment, $args, $depth ) {
 }
 
 
-function tsm_add_cart_to_wp_menu ( $items, $args ) {
+function tms_add_cart_to_wp_menu ( $items, $args ) {
 	include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 	if( 'top' === $args -> theme_location && is_plugin_active( 'woocommerce/woocommerce.php' )  ) {
 		$items .= '<li class="facebook"><a href="'.WC()->cart->get_cart_url().'" title="'.__( 'View your shopping cart', 'tms' ).'"><i class="fa fa-shopping-cart"></i></a></li>';
 	}
 	return $items;
 }
-add_filter('wp_nav_menu_items','tsm_add_cart_to_wp_menu',10,2);
+add_filter('wp_nav_menu_items','tms_add_cart_to_wp_menu',10,2);
 
 
-function tsm_excerpt_more( $more ) {
+function tms_excerpt_more( $more ) {
     return '...';
 }
-add_filter( 'excerpt_more', 'tsm_excerpt_more' );
+add_filter( 'excerpt_more', 'tms_excerpt_more' );
 
-function tsm_custom_excerpt_length( $length ) {
+function tms_custom_excerpt_length( $length ) {
     return 20;
 }
-add_filter( 'excerpt_length', 'tsm_custom_excerpt_length', 999 );
+add_filter( 'excerpt_length', 'tms_custom_excerpt_length', 999 );

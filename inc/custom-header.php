@@ -12,33 +12,33 @@
  *
  * @link https://developer.wordpress.org/themes/functionality/custom-headers/
  *
- * @package tsm
+ * @package tms
  */
 
 /**
  * Set up the WordPress core custom header feature.
  *
- * @uses tsm_header_style()
+ * @uses tms_header_style()
  */
-function tsm_custom_header_setup() {
-	add_theme_support( 'custom-header', apply_filters( 'tsm_custom_header_args', array(
+function tms_custom_header_setup() {
+	add_theme_support( 'custom-header', apply_filters( 'tms_custom_header_args', array(
 		'default-image'          => '',
 		'default-text-color'     => '000000',
 		'width'                  => 1000,
 		'height'                 => 250,
 		'flex-height'            => true,
-		'wp-head-callback'       => 'tsm_header_style',
+		'wp-head-callback'       => 'tms_header_style',
 	) ) );
 }
-//add_action( 'after_setup_theme', 'tsm_custom_header_setup' );
+//add_action( 'after_setup_theme', 'tms_custom_header_setup' );
 
-if ( ! function_exists( 'tsm_header_style' ) ) :
+if ( ! function_exists( 'tms_header_style' ) ) :
 /**
  * Styles the header image and text displayed on the blog.
  *
- * @see tsm_custom_header_setup().
+ * @see tms_custom_header_setup().
  */
-function tsm_header_style() {
+function tms_header_style() {
 	$header_text_color = get_header_textcolor();
 
 	/*

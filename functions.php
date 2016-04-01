@@ -1,13 +1,13 @@
 <?php
 /**
- * tsm functions and definitions.
+ * tms functions and definitions.
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package tsm
+ * @package tms
  */
 
-if ( ! function_exists( 'tsm_setup' ) ) :
+if ( ! function_exists( 'tms_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  *
@@ -15,14 +15,14 @@ if ( ! function_exists( 'tsm_setup' ) ) :
  * runs before the init hook. The init hook is too late for some features, such
  * as indicating support for post thumbnails.
  */
-function tsm_setup() {
+function tms_setup() {
 	/*
 	 * Make theme available for translation.
 	 * Translations can be filed in the /languages/ directory.
-	 * If you're building a theme based on tsm, use a find and replace
-	 * to change 'tsm' to the name of your theme in all the template files.
+	 * If you're building a theme based on tms, use a find and replace
+	 * to change 'tms' to the name of your theme in all the template files.
 	 */
-	load_theme_textdomain( 'tsm', get_template_directory() . '/languages' );
+	load_theme_textdomain( 'tms', get_template_directory() . '/languages' );
 
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
@@ -41,15 +41,15 @@ function tsm_setup() {
 	 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 	 */
 	add_theme_support( 'post-thumbnails' );
-	add_image_size( 'tsm_blog_medium', 600, 400, true );
-	add_image_size( 'tsm_product_thumb', 265, 353, true );
+	add_image_size( 'tms_blog_medium', 600, 400, true );
+	add_image_size( 'tms_product_thumb', 265, 353, true );
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
-		'primary' => esc_html__( 'Primary', 'tsm' ),
-		'footer'  => esc_html__( 'Footer', 'tsm' ),
-		'top'  	  => esc_html__( 'Top Menu', 'tsm' ),
-		'mobile'  => esc_html__( 'Mobile Menu', 'tsm' ),
+		'primary' => esc_html__( 'Primary', 'tms' ),
+		'footer'  => esc_html__( 'Footer', 'tms' ),
+		'top'  	  => esc_html__( 'Top Menu', 'tms' ),
+		'mobile'  => esc_html__( 'Mobile Menu', 'tms' ),
 	) );
 
 	/*
@@ -77,13 +77,13 @@ function tsm_setup() {
 	// ) );
 
 	// Set up the WordPress core custom background feature.
-	add_theme_support( 'custom-background', apply_filters( 'tsm_custom_background_args', array(
+	add_theme_support( 'custom-background', apply_filters( 'tms_custom_background_args', array(
 		'default-color' => 'ffffff',
 		'default-image' => '',
 	) ) );
 }
 endif;
-add_action( 'after_setup_theme', 'tsm_setup' );
+add_action( 'after_setup_theme', 'tms_setup' );
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
@@ -92,19 +92,19 @@ add_action( 'after_setup_theme', 'tsm_setup' );
  *
  * @global int $content_width
  */
-function tsm_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'tsm_content_width', 640 );
+function tms_content_width() {
+	$GLOBALS['content_width'] = apply_filters( 'tms_content_width', 640 );
 }
-add_action( 'after_setup_theme', 'tsm_content_width', 0 );
+add_action( 'after_setup_theme', 'tms_content_width', 0 );
 
 /**
  * Register widget area.
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
-function tsm_widgets_init() {
+function tms_widgets_init() {
 	register_sidebar( array(
-		'name'          => esc_html__( 'Sidebar', 'tsm' ),
+		'name'          => esc_html__( 'Sidebar', 'tms' ),
 		'id'            => 'sidebar-1',
 		'description'   => '',
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
@@ -114,7 +114,7 @@ function tsm_widgets_init() {
 	) );
 
 	register_sidebar( array(
-		'name'          => esc_html__( 'Footer 1', 'tsm' ),
+		'name'          => esc_html__( 'Footer 1', 'tms' ),
 		'id'            => 'footer-1',
 		'description'   => '',
 		'before_widget' => '<div id="%1$s" class="widget footer_widget %2$s">',
@@ -124,7 +124,7 @@ function tsm_widgets_init() {
 	) );
 
 	register_sidebar( array(
-		'name'          => esc_html__( 'Footer 2', 'tsm' ),
+		'name'          => esc_html__( 'Footer 2', 'tms' ),
 		'id'            => 'footer-2',
 		'description'   => '',
 		'before_widget' => '<div id="%1$s" class="widget footer_widget %2$s">',
@@ -134,7 +134,7 @@ function tsm_widgets_init() {
 	) );
 
 	register_sidebar( array(
-		'name'          => esc_html__( 'Footer 3', 'tsm' ),
+		'name'          => esc_html__( 'Footer 3', 'tms' ),
 		'id'            => 'footer-3',
 		'description'   => '',
 		'before_widget' => '<div id="%1$s" class="widget footer_widget %2$s">',
@@ -143,19 +143,19 @@ function tsm_widgets_init() {
 		'after_title'   => '</h4>',
 	) );
 }
-add_action( 'widgets_init', 'tsm_widgets_init' );
+add_action( 'widgets_init', 'tms_widgets_init' );
 
 /**
  * Enqueue scripts and styles.
  */
-function tsm_scripts() {
+function tms_scripts() {
 
 
 
 	wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/assets/css/bootstrap.css', array(), '3.3.6' );
 	wp_enqueue_style( 'bootstrap-theme', get_template_directory_uri() . '/assets/css/bootstrap-theme.css', array(), '3.3.6' );
 
-	wp_enqueue_style( 'tsm-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'tms-style', get_stylesheet_uri() );
 	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/assets/css/font-awesome.css', array(), '4.5' );
 	wp_enqueue_style( 'line-icons', get_template_directory_uri() . '/assets/css/line-icons.css', array(), '4.4' );
 	wp_enqueue_style( 'animations', get_template_directory_uri() . '/assets/css/animations.css', array(), '4.4' );
@@ -170,7 +170,7 @@ function tsm_scripts() {
 
 
 	wp_enqueue_script( 'jquery' );
-	wp_enqueue_script( 'tsm-navigation', get_template_directory_uri() . '/assets/js/navigation.js', array(), '20151215', true );
+	wp_enqueue_script( 'tms-navigation', get_template_directory_uri() . '/assets/js/navigation.js', array(), '20151215', true );
 	wp_enqueue_script( 'bootstrap', get_template_directory_uri() . 		'/assets/js/bootstrap.js', array(), '3.3.6', true );
 	wp_enqueue_script( 'modernizr', get_template_directory_uri() . 		'/assets/js/modernizr.js', array(), '3.3.6', true );
 	wp_enqueue_script( 'ui-plugins', get_template_directory_uri() . 		'/assets/js/ui-plugins.js', array(), '3.3.6', true );
@@ -181,13 +181,13 @@ function tsm_scripts() {
 
 	wp_enqueue_script( 'init', get_template_directory_uri() . 		'/assets/js/init.js', array(), '4.4', true );
 
-	wp_enqueue_script( 'tsm-skip-link-focus-fix', get_template_directory_uri() . '/assets/js/skip-link-focus-fix.js', array(), '20151215', true );
+	wp_enqueue_script( 'tms-skip-link-focus-fix', get_template_directory_uri() . '/assets/js/skip-link-focus-fix.js', array(), '20151215', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
-add_action( 'wp_enqueue_scripts', 'tsm_scripts' );
+add_action( 'wp_enqueue_scripts', 'tms_scripts' );
 
 /**
  * Implement the Custom Header feature.

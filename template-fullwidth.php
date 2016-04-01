@@ -2,7 +2,7 @@
 /**
  * Template Name: Full Width
  *
- * @package tsm
+ * @package tms
  */
 get_header(); ?>
 

@@ -1,7 +1,7 @@
 <?php
 /**
- * tsm metabox for page
- * @package tsm
+ * tms metabox for page
+ * @package tms
  */
 
  /**
