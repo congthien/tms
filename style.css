@@ -1525,6 +1525,7 @@ body.boxed .body{
 }
 .topbar .topmenu li:hover > ul  { display: block;}
 .topbar .topmenu li ul {
+	width: 187px;
 	margin: 0;
     list-style-type: none;
     position: absolute;
@@ -1541,7 +1542,7 @@ body.boxed .body{
     box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.176);
 }
 .topbar .topmenu li ul li { border: none; width: 100%;}
-.topbar .topmenu li ul li a { color: #5E5E5E; border: none; width: 100%;}
+.topbar .topmenu li ul li a { color: #5E5E5E; border: none; width: 100%; text-align: left; }
 .topbar .topmenu a{
 	display:inline-block;
 	border-right:1px solid rgba(255,255,255,.2);
