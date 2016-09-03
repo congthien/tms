@@ -35,7 +35,7 @@ function tms_custom_search_form( $form ) {
     <div class="input-group">
 			<input type="text" value="' . get_search_query() . '" name="s" id="s" class="form-control" placeholder="Search">
 			<span class="input-group-btn">
-				<button class="btn btn-primary" type="button"><i class="fa fa-search"></i></button>
+				<button class="btn btn-primary" type="submit"><i class="fa fa-search"></i></button>
 			</span>
     </div>
     </form>';
