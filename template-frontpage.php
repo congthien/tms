@@ -79,7 +79,8 @@ get_header(); ?>
 
                     while( $in_pages->have_posts() ) : $in_pages->the_post();
                     $page_button_text = get_post_meta( get_the_ID(), 'button_text', true );
-
+                    $custom_link = get_post_meta( get_the_ID(), 'button_link', true );
+                    $link = ! empty( $custom_link ) ? $custom_link : get_permalink() ;
                     $push_col = ( $i > 2 ) ? 'col-lg-push-3' : '';
 
                     ?>
@@ -100,7 +101,7 @@ get_header(); ?>
                               </figure>
                               <p><?php the_excerpt(); ?></p>
                               <?php if ( '' != $page_button_text ) { ?>
-                                <a href="<?php the_permalink(); ?>" class="basic-link"><?php echo esc_attr( $page_button_text ) ?></a><span class="visible-xs visible-sm"><hr/></span>
+                                <a href="<?php  echo  $link; ?>" class="basic-link"><?php echo esc_attr( $page_button_text ) ?></a><span class="visible-xs visible-sm"><hr/></span>
                               <?php } ?>
 
                           </div>
